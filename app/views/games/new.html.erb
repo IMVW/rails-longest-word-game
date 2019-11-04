@@ -1,0 +1,18 @@
+<div class="container">
+<h1>New Game</h1>
+
+
+
+<ol class="list-group list-group-horizontal">
+<% @letters.each do |letter| %>
+  <li class="list-group-item m-2 bg-primary text-white"><%= letter.capitalize %></li>
+<% end %>
+</ol>
+ <h2> What is the longest word?</h2>
+
+<form action="/score">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="answer">
+  <input class="btn btn-primary mb-2" type="submit" value="Check">
+</form>
+</div>
